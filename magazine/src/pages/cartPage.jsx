@@ -4,7 +4,13 @@ import { axiosRequest } from "../utils/axiosRequest";
 import { useDispatch, useSelector } from "react-redux";
 import { IconButton } from "@mui/material";
 import toast from "react-hot-toast";
-import { DeleteAll, DeleteTodo, get2, minusQuantity, plusQuantity } from "../api/api";
+import {
+  DeleteAll,
+  DeleteTodo,
+  get2,
+  minusQuantity,
+  plusQuantity,
+} from "../api/api";
 import { data } from "autoprefixer";
 
 const CartPage = () => {
@@ -24,9 +30,6 @@ const CartPage = () => {
       setPrices(total);
     }
   }, [cartData]);
-
-
-
 
   return (
     <div className="w-[100%]">
@@ -67,10 +70,20 @@ const CartPage = () => {
                         className="p-[10px] w-[40px] h-[44px] outline-none border-[2px] rounded"
                         value={elem.quantity}
                       />
-                        <div className="flex flex-col gap-[5px] items-center justify-center">
-                        <button onClick={() => dispatch(plusQuantity(elem.id))} className="w-[20px] h-[20px] flex justify-center items-center bg-red-500 text-white font-[700] text-[15px] rounded-[50%]">+</button>
-                        <button onClick={() => dispatch(minusQuantity(elem.id))} className="w-[20px] h-[20px] flex justify-center items-center bg-red-500 text-white font-[700] text-[15px] rounded-[50%]">-</button>
-                        </div>
+                      <div className="flex flex-col gap-[5px] items-center justify-center">
+                        <button
+                          onClick={() => dispatch(plusQuantity(elem.id))}
+                          className="w-[20px] h-[20px] flex justify-center items-center bg-red-500 text-white font-[700] text-[15px] rounded-[50%]"
+                        >
+                          +
+                        </button>
+                        <button
+                          onClick={() => dispatch(minusQuantity(elem.id))}
+                          className="w-[20px] h-[20px] flex justify-center items-center bg-red-500 text-white font-[700] text-[15px] rounded-[50%]"
+                        >
+                          -
+                        </button>
+                      </div>
                     </div>
 
                     <h1 className="text-[16px] font-[800]">

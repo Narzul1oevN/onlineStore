@@ -172,4 +172,3 @@ export const filtrByPrice = createAsyncThunk("counter/filtrByPrice", async ({min
 })
 
 // 989005757
-
